@@ -27,6 +27,22 @@
         "documentation": {}
     },
     {
+        "label": "ZipFile",
+        "importPath": "zipfile",
+        "description": "zipfile",
+        "isExtraImport": true,
+        "detail": "zipfile",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "cnnClassifier",
+        "description": "cnnClassifier",
+        "isExtraImport": true,
+        "detail": "cnnClassifier",
+        "documentation": {}
+    },
+    {
         "label": "logger",
         "importPath": "cnnClassifier",
         "description": "cnnClassifier",
@@ -99,7 +115,23 @@
         "documentation": {}
     },
     {
+        "label": "PrepareBaseModelConfig",
+        "importPath": "cnnClassifier.entity.config_entity",
+        "description": "cnnClassifier.entity.config_entity",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.entity.config_entity",
+        "documentation": {}
+    },
+    {
         "label": "DataIngestionConfig",
+        "importPath": "cnnClassifier.entity.config_entity",
+        "description": "cnnClassifier.entity.config_entity",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.entity.config_entity",
+        "documentation": {}
+    },
+    {
+        "label": "PrepareBaseModelConfig",
         "importPath": "cnnClassifier.entity.config_entity",
         "description": "cnnClassifier.entity.config_entity",
         "isExtraImport": true,
@@ -139,6 +171,23 @@
         "documentation": {}
     },
     {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "tensorflow",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tensorflow",
+        "description": "tensorflow",
+        "detail": "tensorflow",
+        "documentation": {}
+    },
+    {
         "label": "*",
         "importPath": "cnnClassifier.constants",
         "description": "cnnClassifier.constants",
@@ -163,11 +212,27 @@
         "documentation": {}
     },
     {
+        "label": "ConfigurationManager",
+        "importPath": "cnnClassifier.config.configuration",
+        "description": "cnnClassifier.config.configuration",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.config.configuration",
+        "documentation": {}
+    },
+    {
         "label": "DataIngestion",
         "importPath": "cnnClassifier.components.data_ingestion",
         "description": "cnnClassifier.components.data_ingestion",
         "isExtraImport": true,
         "detail": "cnnClassifier.components.data_ingestion",
+        "documentation": {}
+    },
+    {
+        "label": "PrepareBaseModel",
+        "importPath": "cnnClassifier.components.prepare_based_model",
+        "description": "cnnClassifier.components.prepare_based_model",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.components.prepare_based_model",
         "documentation": {}
     },
     {
@@ -247,6 +312,14 @@
         "documentation": {}
     },
     {
+        "label": "PrepareBaseModelTrainingPipeline",
+        "importPath": "cnnClassifier.pipeline.stage_02_prepare_based_model",
+        "description": "cnnClassifier.pipeline.stage_02_prepare_based_model",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.pipeline.stage_02_prepare_based_model",
+        "documentation": {}
+    },
+    {
         "label": "setuptools",
         "kind": 6,
         "isExtraImport": true,
@@ -274,6 +347,15 @@
         "documentation": {}
     },
     {
+        "label": "PrepareBaseModel",
+        "kind": 6,
+        "importPath": "src.cnnClassifier.components.prepare_based_model",
+        "description": "src.cnnClassifier.components.prepare_based_model",
+        "peekOfCode": "class PrepareBaseModel:\n    def __init__(self, config: PrepareBaseModelConfig):\n        self.config = config\n    def get_base_model(self):\n        self.model = tf.keras.applications.vgg16.VGG16(\n            input_shape=self.config.params_image_size,\n            weights=self.config.params_weights,\n            include_top=self.config.params_include_top\n        )\n        self.save_model(path=self.config.base_model_path, model=self.model)",
+        "detail": "src.cnnClassifier.components.prepare_based_model",
+        "documentation": {}
+    },
+    {
         "label": "ConfigurationManager",
         "kind": 6,
         "importPath": "src.cnnClassifier.config.configuration",
@@ -287,7 +369,16 @@
         "kind": 6,
         "importPath": "src.cnnClassifier.entity.config_entity",
         "description": "src.cnnClassifier.entity.config_entity",
-        "peekOfCode": "class DataIngestionConfig:\n    root_dir: Path\n    source_URL: str\n    local_data_file: Path\n    unzip_dir: Path",
+        "peekOfCode": "class DataIngestionConfig:\n    root_dir: Path\n    source_URL: str\n    local_data_file: Path\n    unzip_dir: Path\n@dataclass(frozen=True)\nclass PrepareBaseModelConfig:\n    root_dir: Path\n    base_model_path: Path\n    updated_base_model_path: Path",
+        "detail": "src.cnnClassifier.entity.config_entity",
+        "documentation": {}
+    },
+    {
+        "label": "PrepareBaseModelConfig",
+        "kind": 6,
+        "importPath": "src.cnnClassifier.entity.config_entity",
+        "description": "src.cnnClassifier.entity.config_entity",
+        "peekOfCode": "class PrepareBaseModelConfig:\n    root_dir: Path\n    base_model_path: Path\n    updated_base_model_path: Path\n    params_image_size: list\n    params_learning_rate: float\n    params_include_top: bool\n    params_weights: str\n    params_classes: int",
         "detail": "src.cnnClassifier.entity.config_entity",
         "documentation": {}
     },
@@ -307,6 +398,24 @@
         "description": "src.cnnClassifier.pipeline.stage_01_data_ingestion",
         "peekOfCode": "STAGE_NAME = \"Data Ingestion stage\"\nclass DataIngestionTrainingPipeline:\n    def __init__(self):\n        pass\n    def main(self):\n        config = ConfigurationManager()\n        data_ingestion_config = config.get_data_ingestion_config()\n        data_ingestion = DataIngestion(config=data_ingestion_config)\n        data_ingestion.download_file()\n        data_ingestion.extract_zip_file()",
         "detail": "src.cnnClassifier.pipeline.stage_01_data_ingestion",
+        "documentation": {}
+    },
+    {
+        "label": "PrepareBaseModelTrainingPipeline",
+        "kind": 6,
+        "importPath": "src.cnnClassifier.pipeline.stage_02_prepare_based_model",
+        "description": "src.cnnClassifier.pipeline.stage_02_prepare_based_model",
+        "peekOfCode": "class PrepareBaseModelTrainingPipeline:\n    def __init__(self):\n        pass\n    def main(self):\n        config = ConfigurationManager()\n        prepare_base_model_config = config.get_prepare_base_model_config()\n        prepare_base_model = PrepareBaseModel(config=prepare_base_model_config)\n        prepare_base_model.get_base_model()\n        prepare_base_model.update_base_model()\nif __name__ == '__main__':",
+        "detail": "src.cnnClassifier.pipeline.stage_02_prepare_based_model",
+        "documentation": {}
+    },
+    {
+        "label": "STAGE_NAME",
+        "kind": 5,
+        "importPath": "src.cnnClassifier.pipeline.stage_02_prepare_based_model",
+        "description": "src.cnnClassifier.pipeline.stage_02_prepare_based_model",
+        "peekOfCode": "STAGE_NAME = \"Prepare base model\"\nclass PrepareBaseModelTrainingPipeline:\n    def __init__(self):\n        pass\n    def main(self):\n        config = ConfigurationManager()\n        prepare_base_model_config = config.get_prepare_base_model_config()\n        prepare_base_model = PrepareBaseModel(config=prepare_base_model_config)\n        prepare_base_model.get_base_model()\n        prepare_base_model.update_base_model()",
+        "detail": "src.cnnClassifier.pipeline.stage_02_prepare_based_model",
         "documentation": {}
     },
     {
@@ -395,7 +504,16 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "STAGE_NAME = \"Data Ingestion stage\"\ntry:\n   logger.info(f\">>>>>> stage {STAGE_NAME} started <<<<<<\") \n   data_ingestion = DataIngestionTrainingPipeline()\n   data_ingestion.main()\n   logger.info(f\">>>>>> stage {STAGE_NAME} completed <<<<<<\\n\\nx==========x\")\nexcept Exception as e:\n        logger.exception(e)\n        raise e",
+        "peekOfCode": "STAGE_NAME = \"Data Ingestion stage\"\ntry:\n   logger.info(f\">>>>>> stage {STAGE_NAME} started <<<<<<\") \n   data_ingestion = DataIngestionTrainingPipeline()\n   data_ingestion.main()\n   logger.info(f\">>>>>> stage {STAGE_NAME} completed <<<<<<\\n\\nx==========x\")\nexcept Exception as e:\n        logger.exception(e)\n        raise e\nSTAGE_NAME = \"Prepare base model\"",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "STAGE_NAME",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "STAGE_NAME = \"Prepare base model\"\ntry: \n   logger.info(f\"*******************\")\n   logger.info(f\">>>>>> stage {STAGE_NAME} started <<<<<<\")\n   prepare_base_model = PrepareBaseModelTrainingPipeline()\n   prepare_base_model.main()\n   logger.info(f\">>>>>> stage {STAGE_NAME} completed <<<<<<\\n\\nx==========x\")\nexcept Exception as e:\n        logger.exception(e)\n        raise e",
         "detail": "main",
         "documentation": {}
     },
