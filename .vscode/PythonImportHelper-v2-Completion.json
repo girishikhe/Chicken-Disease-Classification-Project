@@ -139,6 +139,14 @@
         "documentation": {}
     },
     {
+        "label": "decodeImage",
+        "importPath": "cnnClassifier.utils.common",
+        "description": "cnnClassifier.utils.common",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.utils.common",
+        "documentation": {}
+    },
+    {
         "label": "DataIngestionConfig",
         "importPath": "cnnClassifier.entity.config_entity",
         "description": "cnnClassifier.entity.config_entity",
@@ -317,6 +325,31 @@
         "documentation": {}
     },
     {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "load_model",
+        "importPath": "tensorflow.keras.models",
+        "description": "tensorflow.keras.models",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.models",
+        "documentation": {}
+    },
+    {
+        "label": "image",
+        "importPath": "tensorflow.keras.preprocessing",
+        "description": "tensorflow.keras.preprocessing",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.preprocessing",
+        "documentation": {}
+    },
+    {
         "label": "ConfigurationManager",
         "importPath": "cnnClassifier.config.configuration",
         "description": "cnnClassifier.config.configuration",
@@ -454,6 +487,62 @@
         "importPath": "base64",
         "description": "base64",
         "detail": "base64",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "cross_origin",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "PredictionPipeline",
+        "importPath": "cnnClassifier.pipeline.prediction",
+        "description": "cnnClassifier.pipeline.prediction",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.pipeline.prediction",
         "documentation": {}
     },
     {
@@ -603,6 +692,15 @@
         "description": "src.cnnClassifier.entity.config_entity",
         "peekOfCode": "class EvaluationConfig:\n    path_of_model: Path\n    training_data: Path\n    all_params: dict\n    params_image_size: list\n    params_batch_size: int",
         "detail": "src.cnnClassifier.entity.config_entity",
+        "documentation": {}
+    },
+    {
+        "label": "PredictionPipeline",
+        "kind": 6,
+        "importPath": "src.cnnClassifier.pipeline.prediction",
+        "description": "src.cnnClassifier.pipeline.prediction",
+        "peekOfCode": "class PredictionPipeline:\n    def __init__(self,filename):\n        self.filename =filename\n    def predict(self):\n        # load model\n        model = load_model(os.path.join(\"artifacts\",\"training\", \"model.h5\"))\n        imagename = self.filename\n        test_image = image.load_img(imagename, target_size = (224,224))\n        test_image = image.img_to_array(test_image)\n        test_image = np.expand_dims(test_image, axis = 0)",
+        "detail": "src.cnnClassifier.pipeline.prediction",
         "documentation": {}
     },
     {
@@ -756,6 +854,51 @@
         "description": "src.cnnClassifier.utils.common",
         "peekOfCode": "def encodeImageIntoBase64(croppedImagePath):\n    with open(croppedImagePath, \"rb\") as f:\n        return base64.b64encode(f.read())",
         "detail": "src.cnnClassifier.utils.common",
+        "documentation": {}
+    },
+    {
+        "label": "ClientApp",
+        "kind": 6,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "class ClientApp:\n    def __init__(self):\n        self.filename = \"inputImage.jpg\"\n        self.classifier = PredictionPipeline(self.filename)\n@app.route(\"/\", methods=['GET'])\n@cross_origin()\ndef home():\n    return render_template('index.html')\n@app.route(\"/train\", methods=['GET','POST'])\n@cross_origin()",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def home():\n    return render_template('index.html')\n@app.route(\"/train\", methods=['GET','POST'])\n@cross_origin()\ndef trainRoute():\n    os.system(\"python main.py\")\n    return \"Training done successfully!\"\n@app.route(\"/predict\", methods=['POST'])\n@cross_origin()\ndef predictRoute():",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "trainRoute",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def trainRoute():\n    os.system(\"python main.py\")\n    return \"Training done successfully!\"\n@app.route(\"/predict\", methods=['POST'])\n@cross_origin()\ndef predictRoute():\n    image = request.json['image']\n    decodeImage(image, clApp.filename)\n    result = clApp.classifier.predict()\n    return jsonify(result)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "predictRoute",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def predictRoute():\n    image = request.json['image']\n    decodeImage(image, clApp.filename)\n    result = clApp.classifier.predict()\n    return jsonify(result)\nif __name__ == \"__main__\":\n    clApp = ClientApp()\n    # app.run(host='0.0.0.0', port=8080) #local host\n    # app.run(host='0.0.0.0', port=8080) #for AWS\n    app.run(host='0.0.0.0', port=80) #for AZURE",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask(__name__)\nCORS(app)\nclass ClientApp:\n    def __init__(self):\n        self.filename = \"inputImage.jpg\"\n        self.classifier = PredictionPipeline(self.filename)\n@app.route(\"/\", methods=['GET'])\n@cross_origin()\ndef home():\n    return render_template('index.html')",
+        "detail": "app",
         "documentation": {}
     },
     {
