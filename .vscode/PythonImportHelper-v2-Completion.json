@@ -91,7 +91,31 @@
         "documentation": {}
     },
     {
+        "label": "logger",
+        "importPath": "cnnClassifier",
+        "description": "cnnClassifier",
+        "isExtraImport": true,
+        "detail": "cnnClassifier",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "cnnClassifier",
+        "description": "cnnClassifier",
+        "isExtraImport": true,
+        "detail": "cnnClassifier",
+        "documentation": {}
+    },
+    {
         "label": "get_size",
+        "importPath": "cnnClassifier.utils.common",
+        "description": "cnnClassifier.utils.common",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.utils.common",
+        "documentation": {}
+    },
+    {
+        "label": "save_json",
         "importPath": "cnnClassifier.utils.common",
         "description": "cnnClassifier.utils.common",
         "isExtraImport": true,
@@ -123,6 +147,14 @@
         "documentation": {}
     },
     {
+        "label": "EvaluationConfig",
+        "importPath": "cnnClassifier.entity.config_entity",
+        "description": "cnnClassifier.entity.config_entity",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.entity.config_entity",
+        "documentation": {}
+    },
+    {
         "label": "PrepareBaseModelConfig",
         "importPath": "cnnClassifier.entity.config_entity",
         "description": "cnnClassifier.entity.config_entity",
@@ -132,6 +164,14 @@
     },
     {
         "label": "PrepareCallbacksConfig",
+        "importPath": "cnnClassifier.entity.config_entity",
+        "description": "cnnClassifier.entity.config_entity",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.entity.config_entity",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingConfig",
         "importPath": "cnnClassifier.entity.config_entity",
         "description": "cnnClassifier.entity.config_entity",
         "isExtraImport": true,
@@ -160,6 +200,46 @@
         "description": "cnnClassifier.entity.config_entity",
         "isExtraImport": true,
         "detail": "cnnClassifier.entity.config_entity",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingConfig",
+        "importPath": "cnnClassifier.entity.config_entity",
+        "description": "cnnClassifier.entity.config_entity",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.entity.config_entity",
+        "documentation": {}
+    },
+    {
+        "label": "EvaluationConfig",
+        "importPath": "cnnClassifier.entity.config_entity",
+        "description": "cnnClassifier.entity.config_entity",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.entity.config_entity",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -253,6 +333,22 @@
         "documentation": {}
     },
     {
+        "label": "ConfigurationManager",
+        "importPath": "cnnClassifier.config.configuration",
+        "description": "cnnClassifier.config.configuration",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.config.configuration",
+        "documentation": {}
+    },
+    {
+        "label": "ConfigurationManager",
+        "importPath": "cnnClassifier.config.configuration",
+        "description": "cnnClassifier.config.configuration",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.config.configuration",
+        "documentation": {}
+    },
+    {
         "label": "DataIngestion",
         "importPath": "cnnClassifier.components.data_ingestion",
         "description": "cnnClassifier.components.data_ingestion",
@@ -266,6 +362,30 @@
         "description": "cnnClassifier.components.prepare_based_model",
         "isExtraImport": true,
         "detail": "cnnClassifier.components.prepare_based_model",
+        "documentation": {}
+    },
+    {
+        "label": "PrepareCallback",
+        "importPath": "cnnClassifier.components.prepare_callbacks",
+        "description": "cnnClassifier.components.prepare_callbacks",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.components.prepare_callbacks",
+        "documentation": {}
+    },
+    {
+        "label": "Training",
+        "importPath": "cnnClassifier.components.training",
+        "description": "cnnClassifier.components.training",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.components.training",
+        "documentation": {}
+    },
+    {
+        "label": "Evaluation",
+        "importPath": "cnnClassifier.components.evaluation",
+        "description": "cnnClassifier.components.evaluation",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.components.evaluation",
         "documentation": {}
     },
     {
@@ -353,6 +473,22 @@
         "documentation": {}
     },
     {
+        "label": "ModelTrainingPipeline",
+        "importPath": "cnnClassifier.pipeline.stage_03_training",
+        "description": "cnnClassifier.pipeline.stage_03_training",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.pipeline.stage_03_training",
+        "documentation": {}
+    },
+    {
+        "label": "EvaluationPipeline",
+        "importPath": "cnnClassifier.pipeline.stage_04_evaluation",
+        "description": "cnnClassifier.pipeline.stage_04_evaluation",
+        "isExtraImport": true,
+        "detail": "cnnClassifier.pipeline.stage_04_evaluation",
+        "documentation": {}
+    },
+    {
         "label": "setuptools",
         "kind": 6,
         "isExtraImport": true,
@@ -380,6 +516,15 @@
         "documentation": {}
     },
     {
+        "label": "Evaluation",
+        "kind": 6,
+        "importPath": "src.cnnClassifier.components.evaluation",
+        "description": "src.cnnClassifier.components.evaluation",
+        "peekOfCode": "class Evaluation:\n    def __init__(self, config: EvaluationConfig):\n        self.config = config\n    def _valid_generator(self):\n        datagenerator_kwargs = dict(\n            rescale = 1./255,\n            validation_split=0.30\n        )\n        dataflow_kwargs = dict(\n            target_size=self.config.params_image_size[:-1],",
+        "detail": "src.cnnClassifier.components.evaluation",
+        "documentation": {}
+    },
+    {
         "label": "PrepareBaseModel",
         "kind": 6,
         "importPath": "src.cnnClassifier.components.prepare_based_model",
@@ -393,8 +538,17 @@
         "kind": 6,
         "importPath": "src.cnnClassifier.components.prepare_callbacks",
         "description": "src.cnnClassifier.components.prepare_callbacks",
-        "peekOfCode": "class PrepareCallback:\n    def __init__(self, config: PrepareCallbacksConfig):\n        self.config = config\n    @property\n    def _create_tb_callbacks(self):\n        timestamp = time.strftime(\"%Y-%m-%d-%H-%M-%S\")\n        tb_running_log_dir = os.path.join(\n            self.config.tensorboard_root_log_dir,\n            f\"tb_logs_at_{timestamp}\",\n        )",
+        "peekOfCode": "class PrepareCallback:\n    def __init__(self, config: PrepareCallbacksConfig):\n        self.config = config\n    @property\n    def _create_tb_callbacks(self):\n        timestamp = time.strftime(\"%Y-%m-%d-%H-%M-%S\")\n        tb_running_log_dir = os.path.join(\n            self.config.tensorboard_root_log_dir.as_posix(),\n            f\"tb_logs_at_{timestamp}\",\n        )",
         "detail": "src.cnnClassifier.components.prepare_callbacks",
+        "documentation": {}
+    },
+    {
+        "label": "Training",
+        "kind": 6,
+        "importPath": "src.cnnClassifier.components.training",
+        "description": "src.cnnClassifier.components.training",
+        "peekOfCode": "class Training:\n    def __init__(self, config: TrainingConfig):\n        self.config = config\n    def get_base_model(self):\n        self.model = tf.keras.models.load_model(\n            self.config.updated_base_model_path\n        )\n    def train_valid_generator(self):\n        datagenerator_kwargs = dict(\n            rescale = 1./255,",
+        "detail": "src.cnnClassifier.components.training",
         "documentation": {}
     },
     {
@@ -429,7 +583,25 @@
         "kind": 6,
         "importPath": "src.cnnClassifier.entity.config_entity",
         "description": "src.cnnClassifier.entity.config_entity",
-        "peekOfCode": "class PrepareCallbacksConfig:\n    root_dir: Path\n    tensorboard_root_log_dir: Path\n    checkpoint_model_filepath: Path",
+        "peekOfCode": "class PrepareCallbacksConfig:\n    root_dir: Path\n    tensorboard_root_log_dir: Path\n    checkpoint_model_filepath: Path\n@dataclass(frozen=True)\nclass TrainingConfig:\n    root_dir: Path\n    trained_model_path: Path\n    updated_base_model_path: Path\n    training_data: Path",
+        "detail": "src.cnnClassifier.entity.config_entity",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingConfig",
+        "kind": 6,
+        "importPath": "src.cnnClassifier.entity.config_entity",
+        "description": "src.cnnClassifier.entity.config_entity",
+        "peekOfCode": "class TrainingConfig:\n    root_dir: Path\n    trained_model_path: Path\n    updated_base_model_path: Path\n    training_data: Path\n    params_epochs: int\n    params_batch_size: int\n    params_is_augmentation: bool\n    params_image_size: list\n@dataclass(frozen=True)",
+        "detail": "src.cnnClassifier.entity.config_entity",
+        "documentation": {}
+    },
+    {
+        "label": "EvaluationConfig",
+        "kind": 6,
+        "importPath": "src.cnnClassifier.entity.config_entity",
+        "description": "src.cnnClassifier.entity.config_entity",
+        "peekOfCode": "class EvaluationConfig:\n    path_of_model: Path\n    training_data: Path\n    all_params: dict\n    params_image_size: list\n    params_batch_size: int",
         "detail": "src.cnnClassifier.entity.config_entity",
         "documentation": {}
     },
@@ -467,6 +639,42 @@
         "description": "src.cnnClassifier.pipeline.stage_02_prepare_based_model",
         "peekOfCode": "STAGE_NAME = \"Prepare base model\"\nclass PrepareBaseModelTrainingPipeline:\n    def __init__(self):\n        pass\n    def main(self):\n        config = ConfigurationManager()\n        prepare_base_model_config = config.get_prepare_base_model_config()\n        prepare_base_model = PrepareBaseModel(config=prepare_base_model_config)\n        prepare_base_model.get_base_model()\n        prepare_base_model.update_base_model()",
         "detail": "src.cnnClassifier.pipeline.stage_02_prepare_based_model",
+        "documentation": {}
+    },
+    {
+        "label": "ModelTrainingPipeline",
+        "kind": 6,
+        "importPath": "src.cnnClassifier.pipeline.stage_03_training",
+        "description": "src.cnnClassifier.pipeline.stage_03_training",
+        "peekOfCode": "class ModelTrainingPipeline:\n    def __init__(self):\n        pass\n    def main(self):\n        config = ConfigurationManager()\n        prepare_callbacks_config = config.get_prepare_callback_config()\n        prepare_callbacks = PrepareCallback(config=prepare_callbacks_config)\n        callback_list = prepare_callbacks.get_tb_ckpt_callbacks()\n        training_config = config.get_training_config()\n        training = Training(config=training_config)",
+        "detail": "src.cnnClassifier.pipeline.stage_03_training",
+        "documentation": {}
+    },
+    {
+        "label": "STAGE_NAME",
+        "kind": 5,
+        "importPath": "src.cnnClassifier.pipeline.stage_03_training",
+        "description": "src.cnnClassifier.pipeline.stage_03_training",
+        "peekOfCode": "STAGE_NAME = \"Training\"\nclass ModelTrainingPipeline:\n    def __init__(self):\n        pass\n    def main(self):\n        config = ConfigurationManager()\n        prepare_callbacks_config = config.get_prepare_callback_config()\n        prepare_callbacks = PrepareCallback(config=prepare_callbacks_config)\n        callback_list = prepare_callbacks.get_tb_ckpt_callbacks()\n        training_config = config.get_training_config()",
+        "detail": "src.cnnClassifier.pipeline.stage_03_training",
+        "documentation": {}
+    },
+    {
+        "label": "EvaluationPipeline",
+        "kind": 6,
+        "importPath": "src.cnnClassifier.pipeline.stage_04_evaluation",
+        "description": "src.cnnClassifier.pipeline.stage_04_evaluation",
+        "peekOfCode": "class EvaluationPipeline:\n    def __init__(self):\n        pass\n    def main(self):\n        config = ConfigurationManager()\n        val_config = config.get_validation_config()\n        evaluation = Evaluation(val_config)\n        evaluation.evaluation()\n        evaluation.save_score()\nif __name__ == '__main__':",
+        "detail": "src.cnnClassifier.pipeline.stage_04_evaluation",
+        "documentation": {}
+    },
+    {
+        "label": "STAGE_NAME",
+        "kind": 5,
+        "importPath": "src.cnnClassifier.pipeline.stage_04_evaluation",
+        "description": "src.cnnClassifier.pipeline.stage_04_evaluation",
+        "peekOfCode": "STAGE_NAME = \"Evaluation stage\"\nclass EvaluationPipeline:\n    def __init__(self):\n        pass\n    def main(self):\n        config = ConfigurationManager()\n        val_config = config.get_validation_config()\n        evaluation = Evaluation(val_config)\n        evaluation.evaluation()\n        evaluation.save_score()",
+        "detail": "src.cnnClassifier.pipeline.stage_04_evaluation",
         "documentation": {}
     },
     {
@@ -565,6 +773,24 @@
         "importPath": "main",
         "description": "main",
         "peekOfCode": "STAGE_NAME = \"Prepare base model\"\ntry: \n   logger.info(f\"*******************\")\n   logger.info(f\">>>>>> stage {STAGE_NAME} started <<<<<<\")\n   prepare_base_model = PrepareBaseModelTrainingPipeline()\n   prepare_base_model.main()\n   logger.info(f\">>>>>> stage {STAGE_NAME} completed <<<<<<\\n\\nx==========x\")\nexcept Exception as e:\n        logger.exception(e)\n        raise e",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "STAGE_NAME",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "STAGE_NAME = \"Training\"\ntry: \n   logger.info(f\"*******************\")\n   logger.info(f\">>>>>> stage {STAGE_NAME} started <<<<<<\")\n   model_trainer = ModelTrainingPipeline()\n   model_trainer.main()\n   logger.info(f\">>>>>> stage {STAGE_NAME} completed <<<<<<\\n\\nx==========x\")\nexcept Exception as e:\n        logger.exception(e)\n        raise e",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "STAGE_NAME",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "STAGE_NAME = \"Evaluation stage\"\ntry:\n   logger.info(f\"*******************\")\n   logger.info(f\">>>>>> stage {STAGE_NAME} started <<<<<<\")\n   model_evalution = EvaluationPipeline()\n   model_evalution.main()\n   logger.info(f\">>>>>> stage {STAGE_NAME} completed <<<<<<\\n\\nx==========x\")\nexcept Exception as e:\n        logger.exception(e)\n        raise e",
         "detail": "main",
         "documentation": {}
     },
